@@ -49,4 +49,6 @@ return require('packer').startup(function(use)
             require("nvim-tree").setup {}
         end
     }
+
+    use('akinsho/toggleterm.nvim')
 end)

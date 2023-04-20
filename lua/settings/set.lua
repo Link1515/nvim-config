@@ -2,7 +2,6 @@ vim.opt.nu = true
 vim.opt.rnu = true
 
 vim.opt.cursorline = true
-vim.cmd("hi CursorLine guibg=#0E1609")
 
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -25,3 +24,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
+
+vim.cmd('au TextYankPost * silent! lua vim.highlight.on_yank {timeout = 300}')

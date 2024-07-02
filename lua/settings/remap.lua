@@ -10,6 +10,14 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- go to match xml tag
+vim.keymap.set("n", "<leader>tj", "vat<Esc>")
+vim.keymap.set("n", "<leader>tk", "vato<Esc>")
+
+-- folding
+vim.keymap.set("n", "<leader>za", "zfat")
+
+
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
 -- copy to system clipboard

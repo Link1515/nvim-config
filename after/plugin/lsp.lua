@@ -2,7 +2,6 @@ local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
 	'html',
-	'tsserver',
 	'volar',
 	'eslint',
 	'cssls',

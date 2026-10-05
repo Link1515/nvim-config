@@ -37,6 +37,6 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 
 ### 更新套件
 
-- 開啟 lua/settings/packer.lua
-- 執行當前腳本 :source
-- 使用指令 :PackerSync 下載包
+- 啟動時會自動載入 `lua/settings/packer.lua`，可直接執行 `:PackerSync`。
+- 修改套件清單後，開啟 `lua/settings/packer.lua`，先儲存，再執行 `:source %` 和 `:PackerSync`。
+- 若尚未安裝插件，啟動時可能出現 `module not found`；同步完成後重新啟動 Neovim。

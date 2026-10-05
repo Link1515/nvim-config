@@ -1,4 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- Loaded by lua/settings/init.lua; use :source % to reload after editing.
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -14,7 +14,8 @@ return require('packer').startup(function(use)
     }
 
     use('Mofiqul/vscode.nvim')
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- Keep the configs API used in after/plugin/treesitter.lua.
+    use { 'nvim-treesitter/nvim-treesitter', branch = 'master', run = ':TSUpdate' }
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
@@ -24,14 +25,16 @@ return require('packer').startup(function(use)
         branch = 'v2.x',
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
+            -- Compatible with Neovim 0.10 and lsp-zero v2.
+            {'neovim/nvim-lspconfig', tag = 'v1.8.0'}, -- Required
             {                                      -- Optional
             'williamboman/mason.nvim',
+            tag = 'v1.11.0',
             run = function()
                 pcall(vim.cmd, 'MasonUpdate')
             end,
         },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+        {'williamboman/mason-lspconfig.nvim', tag = 'v1.32.0'}, -- Optional
 
         -- Autocompletion
         {'hrsh7th/nvim-cmp'},     -- Required

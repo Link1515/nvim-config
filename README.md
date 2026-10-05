@@ -30,9 +30,15 @@ init.lua
 - nvim 的包管理工具
 - 安裝
 
+### Linux:
+```
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+### windows:
 ```bash
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
-
 ```
 
 ### 更新套件
